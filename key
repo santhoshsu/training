@@ -1,0 +1,1 @@
+kubeadm join 172.31.2.111:6443 --token litkwf.kt0ihmf0uoh8n18n --discovery-token-ca-cert-hash sha256:9e01074ffa4362d0d91ef81403d2417f154c63f79b20f62970b685d5526b89ee 
