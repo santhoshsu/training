@@ -1,0 +1,43 @@
+   70  kubectl get pods
+   71  vi deploy.yaml
+   72  kubectl create -f deploy.yaml
+   73  kubectl get all
+   74  kubectl expose deploy nginx-deployment --type ClusterIP --targetport 80 --port 80
+   75  kubectl expose deploy nginx-deployment --type ClusterIP --target-port 80 --port 80
+   76  kubectl get svc
+   77  kubectl delete svc nginx-deployment
+   78  kubectl expose deploy nginx-deployment --name internal-service --type ClusterIP --target-port 80 --port 80
+   79  kubectl get svc
+   80  curl 10.104.162.181
+   81  kubectl get pods -o wide
+   82  kubectl describe svc internal-service
+   83  kubectl delete pod nginx-deployment-6c888bb4c6-97nzq
+   84  kubectl get pods -o wide
+   85  kubectl describe svc internal-service
+   86  kubectl expose deploy nginx-deployment --name internal-service --type ClusterIP --target-port 80 --port 80 --dry-run=client -o yaml
+   87  kubectl delete svc internal-service
+   88  kubectl expose deploy nginx-deployment --name external-service --type NodePort --target-port 80 --port 80
+   89  kubectl get svc
+   90  kubectl expose deploy nginx-deployment --name external-service --type NodePort --target-port 80 --port 80 --dry-run=client -o yaml
+   91  kubectl delete svc external-service
+   92  kubectl expose deploy nginx-deployment --name external-service --type LoadBalancer --target-port 80 --port 80
+   93  kubectl get svc
+   94  kubectl delete svc external-service
+   95  kubectl expose deploy nginx-deployment --name external-service --type LoadBalancer --target-port 80 --port 80 --external-ip 192.165.3.2
+   96  kubectl get svc
+   97  kubectl delete svc external-service
+   98  kubectl delete deploy --all
+   99  kubectl run nginx --image nginx
+  100  kubectl run tomcat --image tomcat
+  101  kubectl get pods
+  102  kubectl expose pod nginx --type ClusterIP --port 80
+  103  kubectl expose pod tomcat  --type ClusterIP --port 8080
+from Raman Sharma to everyone:    5:10 PM
+  104  kubectl get svc
+  105  kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.7.1/deploy/static/provider/baremetal/deploy.yaml
+  106  kubectl get ns
+  107  kubectl get svc -n ingress-nginx
+  108  vi ingress.yaml
+  109  kubectl create -f ingress.yaml
+  110  kubectl get ingress
+0
